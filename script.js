@@ -35,16 +35,35 @@ containerDiv.addEventListener("mouseover", (e) => {
 });
 
 //Every time one of the buttons is clicked, it removes the previous grid and calls the createGrids function again to create a new one
-const sizeButtonsDiv = document.querySelector(".size-buttons")
+const sizeButtonsDiv = document.querySelector(".size-buttons");
 sizeButtonsDiv.addEventListener("click", (e) => {
   if (e.target.matches(".small-density")) {
-    while (containerDiv.hasChildNodes()) containerDiv.firstChild.remove()
-      createGrids(16);
+    while (containerDiv.hasChildNodes()) containerDiv.firstChild.remove();
+    createGrids(16);
   } else if (e.target.matches(".medium-density")) {
-    while (containerDiv.hasChildNodes()) containerDiv.firstChild.remove()
-      createGrids(50);
+    while (containerDiv.hasChildNodes()) containerDiv.firstChild.remove();
+    createGrids(50);
   } else if (e.target.matches(".big-density")) {
-    while (containerDiv.hasChildNodes()) containerDiv.firstChild.remove()
-      createGrids(80);
+    while (containerDiv.hasChildNodes()) containerDiv.firstChild.remove();
+    createGrids(80);
+  } else if (e.target.matches(".custom-grid")) {
+    //Logic for the custom grid button and filters to the prompt answers
+    let gridNumber;
+    while (true) {
+      gridNumber = prompt(
+        "How many grids do you want? Enter a number between 1-100"
+      );
+      if (gridNumber === null) {
+        //If user cancels, end the loop
+        break;
+      }
+      gridNumber = parseInt(gridNumber);
+      if (!isNaN(gridNumber) && gridNumber > 0 && gridNumber <= 100) {
+        //If input is a number larger than 0 and smaller or equal to 100, remove all square divs and pass the number to the createGrids function, if not, ask again.
+        while (containerDiv.hasChildNodes()) containerDiv.firstChild.remove();
+        createGrids(gridNumber);
+        break;
+      }
+    }
   }
-})
+});

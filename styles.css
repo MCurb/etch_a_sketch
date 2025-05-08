@@ -1,80 +1,97 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #78CCCB;
-    padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #78cccb;
+  padding: 50px;
 }
 
 h1 {
-    margin: 0;
-    font-size: 40px;
-    font-family: "Lobster", cursive;
-    color: #FFED66;
+  margin: 0;
+  font-size: 40px;
+  font-family: "Lobster", cursive;
+  color: #ffed66;
 }
 
 p {
-    font-size: 25px;
-   color: #FFFFEA;
-   font-family: "Montserrat", sans-serif;
-   font-weight: 700;
+  font-size: 25px;
+  color: #ffffea;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
 
 /* Grid Container */
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 650px;
-    height: 650px;
-    overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  width: 650px;
+  height: 650px;
+  overflow: hidden;
 }
 
 /* Outline Styles */
 .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 16px 16px 0 0;
-    height: 90px;
-    width: 850px;
-    background-color: #FF5E5B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px 16px 0 0;
+  height: 90px;
+  width: 850px;
+  background-color: #ff5e5b;
 }
 
 .outer-box {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 650px;
-    width: 850px;
-    padding: 0;
-    background-color: #FF5E5B;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 650px;
+  width: 850px;
+  padding: 0;
+  background-color: #ff5e5b;
 }
 
 /* Buttons Container */
 .size-buttons {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 0 0 16px 16px;
+  height: 90px;
+  width: 850px;
+  background-color: #ff5e5b;
+}
+
+.density-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.custom-div {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    border-radius: 0 0 16px 16px;
-    height: 90px;
-    width: 850px;
-    background-color: #FF5E5B;
 }
 
 /*Button Styles*/
-.small-density, .medium-density, .big-density {
-    border: 0;
-    font-size: 16px;
-    font-family: inherit;
-    padding: 5px 12px;
-    border-radius: 2px;
-    transition: 0.3s;
+.small-density,
+.medium-density,
+.big-density,
+.custom-grid {
+  border: 0;
+  font-size: 16px;
+  font-family: inherit;
+  padding: 5px 12px;
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
 /* Buttons behavior on hover */
-.small-density:hover, .medium-density:hover, .big-density:hover {
-    background-color: #FFED66;
-    cursor: pointer;
-    scale: 1.03;
+.small-density:hover,
+.medium-density:hover,
+.big-density:hover,
+.custom-grid:hover {
+  background-color: #ffed66;
+  cursor: pointer;
+  scale: 1.03;
 }
