@@ -1,8 +1,7 @@
 const containerDiv = document.querySelector(".container");
 
-function createGrids() {
+function createGrids(gridSize) {
   //Create a lot of divs that change their height and width to fit the container perfectly, no matter how much of them
-  let gridSize = 20;
   for (let i = 0; i < gridSize; i++) {
     const columnDiv = document.createElement("div");
     // columnDiv.textContent = i;
@@ -23,22 +22,30 @@ function createGrids() {
     }
   }
 }
-createGrids();
+createGrids(50);
 
-const rowDivHover = document.querySelectorAll(".square-divs");
-
-rowDivHover.forEach((div) => {
-  div.addEventListener("mouseenter", () => {
+containerDiv.addEventListener("mouseover", (e) => {
+  if (e.target.matches(".square-divs")) {
     let x = Math.floor(Math.random() * 256);
     let y = Math.floor(Math.random() * 256);
     let z = Math.floor(Math.random() * 256);
-    let bgColor = `rgb(${x}, ${y}, ${z})`
-    div.style.background = bgColor;
-  });
+    let bgColor = `rgb(${x}, ${y}, ${z})`;
+    e.target.style.background = bgColor;
+  }
 });
 
-// const newGridBtn = document.querySelector(".new-grid");
-// newGridBtn.addEventListener("click", () => {
-//   let gridSize = prompt("How many squares do you want");
-//   createGrids(gridSize);
+const newGridBtn = document.querySelector(".new-grid");
+newGridBtn.addEventListener("click", () => {
+  let size = prompt("How many squares do you want?");
+  createGrids(size);
+});
+
+// rowDivHover.forEach((div) => {
+//   div.addEventListener("mouseover", () => {
+//     let x = Math.floor(Math.random() * 256);
+//     let y = Math.floor(Math.random() * 256);
+//     let z = Math.floor(Math.random() * 256);
+//     let bgColor = `rgb(${x}, ${y}, ${z})`
+//     div.style.background = bgColor;
+//   });
 // });
