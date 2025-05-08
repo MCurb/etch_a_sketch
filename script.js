@@ -34,9 +34,23 @@ containerDiv.addEventListener("mouseover", (e) => {
   }
 });
 
-const newGridBtn = document.querySelector(".new-grid");
-newGridBtn.addEventListener("click", () => {
-  let size = prompt("How many squares do you want?");
-  while (containerDiv.hasChildNodes()) containerDiv.firstChild.remove()
-  createGrids(size);
-});
+// const newGridBtn = document.querySelector(".new-grid");
+// newGridBtn.addEventListener("click", () => {
+//   let size = prompt("How many squares do you want?");
+//   while (containerDiv.hasChildNodes()) containerDiv.firstChild.remove()
+//   createGrids(size);
+// });
+
+const sizeButtonsDiv = document.querySelector(".size-buttons")
+sizeButtonsDiv.addEventListener("click", (e) => {
+  if (e.target.matches(".small-density")) {
+    while (containerDiv.hasChildNodes()) containerDiv.firstChild.remove()
+      createGrids(16);
+  } else if (e.target.matches(".medium-density")) {
+    while (containerDiv.hasChildNodes()) containerDiv.firstChild.remove()
+      createGrids(50);
+  } else if (e.target.matches(".big-density")) {
+    while (containerDiv.hasChildNodes()) containerDiv.firstChild.remove()
+      createGrids(80);
+  }
+})
