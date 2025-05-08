@@ -37,15 +37,6 @@ containerDiv.addEventListener("mouseover", (e) => {
 const newGridBtn = document.querySelector(".new-grid");
 newGridBtn.addEventListener("click", () => {
   let size = prompt("How many squares do you want?");
+  while (containerDiv.hasChildNodes()) containerDiv.firstChild.remove()
   createGrids(size);
 });
-
-// rowDivHover.forEach((div) => {
-//   div.addEventListener("mouseover", () => {
-//     let x = Math.floor(Math.random() * 256);
-//     let y = Math.floor(Math.random() * 256);
-//     let z = Math.floor(Math.random() * 256);
-//     let bgColor = `rgb(${x}, ${y}, ${z})`
-//     div.style.background = bgColor;
-//   });
-// });
