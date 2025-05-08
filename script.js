@@ -16,7 +16,7 @@ function createGrids(gridSize) {
       // rowDiv.textContent = i
       rowDiv.setAttribute(
         "style",
-        "display: flex; flex: 1; background-color: white; border: 1px solid black;"
+        "display: flex; flex: 1; background-color: white; border: 0.1px solid gray;"
       );
       columnDiv.appendChild(rowDiv);
     }
@@ -33,13 +33,6 @@ containerDiv.addEventListener("mouseover", (e) => {
     e.target.style.background = bgColor;
   }
 });
-
-// const newGridBtn = document.querySelector(".new-grid");
-// newGridBtn.addEventListener("click", () => {
-//   let size = prompt("How many squares do you want?");
-//   while (containerDiv.hasChildNodes()) containerDiv.firstChild.remove()
-//   createGrids(size);
-// });
 
 const sizeButtonsDiv = document.querySelector(".size-buttons")
 sizeButtonsDiv.addEventListener("click", (e) => {
