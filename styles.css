@@ -2,6 +2,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #78CCCB;
+    padding: 50px;
 }
 
 h1 {
