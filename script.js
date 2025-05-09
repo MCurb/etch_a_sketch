@@ -26,11 +26,7 @@ createGrids(50);
 //Event listener that gives a random color to the targeted square-div
 containerDiv.addEventListener("mouseover", (e) => {
   if (e.target.matches(".square-divs")) {
-    let x = Math.floor(Math.random() * 256);
-    let y = Math.floor(Math.random() * 256);
-    let z = Math.floor(Math.random() * 256);
-    let bgColor = `rgb(${x}, ${y}, ${z})`;
-    e.target.style.background = bgColor;
+    e.target.style.background = `hsl(${Math.random() * 360}, 80%, 50%)`;
   }
 });
 
