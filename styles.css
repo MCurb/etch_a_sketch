@@ -2,7 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #78cccb;
+  background-color: hsl(179, 45%, 64%);
   padding: 50px;
 }
 
@@ -10,14 +10,22 @@ h1 {
   margin: 0;
   font-size: 40px;
   font-family: "Lobster", cursive;
-  color: #ffed66;
+  color: hsl(53, 100%, 70%);
 }
 
 p {
-  font-size: 25px;
+  font-size: 20px;
   color: #ffffea;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
+}
+
+.square-divs {
+  display: flex;
+  flex: 1;
+  background-color: hsl(0, 0%, 85%);
+  opacity: 1;
+  border: 0.1px solid hsl(0, 0%, 50%);
 }
 
 /* Grid Container */
@@ -37,7 +45,7 @@ p {
   border-radius: 16px 16px 0 0;
   height: 90px;
   width: 850px;
-  background-color: #ff5e5b;
+  background-color: hsl(1, 100%, 68%);
 }
 
 .outer-box {
@@ -47,20 +55,21 @@ p {
   height: 650px;
   width: 850px;
   padding: 0;
-  background-color: #ff5e5b;
+  background-color: hsl(1, 100%, 68%);
 }
 
 /* Buttons Container */
-.size-buttons {
+.buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 100px;
   border-radius: 0 0 16px 16px;
   height: 90px;
   width: 850px;
-  background-color: #ff5e5b;
+  background-color: hsl(1, 100%, 68%);
 }
 
-.density-div {
+.size-buttons-div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,27 +80,36 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
 /*Button Styles*/
 .small-density,
 .medium-density,
 .big-density,
-.custom-grid {
+.custom-grid,
+.eraser-btn {
   border: 0;
   font-size: 16px;
   font-family: inherit;
   padding: 5px 12px;
   border-radius: 2px;
+  background-color: hsl(60, 100%, 96%);
   transition: 0.3s;
+}
+
+.eraser-btn {
+  color: hsl(1, 100%, 68%);
+  font-weight: 700;
 }
 
 /* Buttons behavior on hover */
 .small-density:hover,
 .medium-density:hover,
 .big-density:hover,
-.custom-grid:hover {
-  background-color: #ffed66;
+.custom-grid:hover,
+.eraser-btn:hover {
+  background-color: hsl(53, 100%, 70%);
   cursor: pointer;
   scale: 1.03;
 }
