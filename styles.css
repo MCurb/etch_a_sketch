@@ -26,6 +26,7 @@ p {
   background-color: hsl(0, 0%, 85%);
   opacity: 1;
   border: 0.1px solid hsl(0, 0%, 50%);
+  user-select: none;
 }
 
 /* Grid Container */

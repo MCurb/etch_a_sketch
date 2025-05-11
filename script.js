@@ -19,12 +19,21 @@ function createGrids(gridSize) {
 }
 createGrids(50);
 
+let mouseDown = false;
+window.onmousedown = () => mouseDown = true;
+window.onmouseup = () => mouseDown = false;
+
 //Event listener that gives a random color to the targeted square-div
 containerDiv.addEventListener("mouseover", (e) => {
-  if (e.target.matches(".square-divs")) {
+  if (e.target.matches(".square-divs") && mouseDown === true) {
     e.target.style.background = `hsl(${Math.random() * 360}, 80%, 50%)`;
   }
 });
+containerDiv.addEventListener("mousedown", (e) => {
+  if (e.target.matches(".square-divs") && isErasing === false) {
+    e.target.style.background = `hsl(${Math.random() * 360}, 80%, 50%)`;
+  }
+})
 
 //Event listener to the buttons div, that catches when any button is clicked
 const buttonsDiv = document.querySelector(".buttons");
@@ -81,9 +90,9 @@ let isErasing = false
 
 //If isErasing true, change the targeted square div to white, if not give it a random color
 function toggleBackground(event) {
-  if (isErasing === true) {
+  if (isErasing === true && mouseDown === true) {
     event.target.style.background = "hsl(0, 0.00%, 84.70%)";
-  } else if (isErasing === false) {
+  } else if (isErasing === false && mouseDown === true) {
     event.target.style.background = `hsl(${Math.random() * 360}, 80%, 50%)`;
   }
 }
