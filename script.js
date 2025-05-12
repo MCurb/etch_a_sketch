@@ -20,8 +20,8 @@ function createGrids(gridSize) {
 createGrids(50);
 
 let mouseDown = false;
-window.onmousedown = () => mouseDown = true;
-window.onmouseup = () => mouseDown = false;
+window.onmousedown = () => (mouseDown = true);
+window.onmouseup = () => (mouseDown = false);
 
 //Event listener that gives a random color to the targeted square-div
 containerDiv.addEventListener("mouseover", (e) => {
@@ -33,7 +33,7 @@ containerDiv.addEventListener("mousedown", (e) => {
   if (e.target.matches(".square-divs") && isErasing === false) {
     e.target.style.background = `hsl(${Math.random() * 360}, 80%, 50%)`;
   }
-})
+});
 
 //Event listener to the buttons div, that catches when any button is clicked
 const buttonsDiv = document.querySelector(".buttons");
@@ -53,7 +53,7 @@ buttonsDiv.addEventListener("click", (e) => {
     let gridNumber;
     while (true) {
       gridNumber = prompt(
-        "How many grids do you want? Enter a number between 1-100"
+        "How many grids do you want? Enter a number between 1-100", "100"
       );
       //If user cancels, end the loop
       if (gridNumber === null) {
@@ -72,21 +72,20 @@ buttonsDiv.addEventListener("click", (e) => {
   } else if (e.target.matches(".eraser-btn")) {
     //If isErasing is false, set it to true and call the toggleBackground function through the event listener
     if (isErasing === false) {
-      isErasing = true
+      isErasing = true;
       //Change btn background to active color
-      eraserBtn.style.background = "hsl(53, 100%, 70%)"
+      eraserBtn.style.background = "hsl(53, 100%, 70%)";
       containerDiv.addEventListener("mouseover", toggleBackground);
     } else if (isErasing === true) {
-      isErasing = false
-      eraserBtn.style.background = "hsl(60, 100%, 96%)"
+      isErasing = false;
+      eraserBtn.style.background = "hsl(60, 100%, 96%)";
       containerDiv.addEventListener("mouseover", toggleBackground);
     }
-    
   }
 });
 
-const eraserBtn = document.querySelector(".eraser-btn")
-let isErasing = false
+const eraserBtn = document.querySelector(".eraser-btn");
+let isErasing = false;
 
 //If isErasing true, change the targeted square div to white, if not give it a random color
 function toggleBackground(event) {
